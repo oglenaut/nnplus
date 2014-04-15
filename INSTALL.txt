@@ -1,6 +1,6 @@
 REQUIREMENTS
 	PHP
-		php version 5.2 or higher (5.3 recommended, lower versions may give warnings on some functions)
+		php version 5.4
 		sessions enabled
 		memory limit at 256MB or more
 		minimum execution time of 60+ seconds
@@ -21,6 +21,9 @@ REQUIREMENTS
 		script timeout of at least 60 seconds
 		mod_rewrite enabled
 		.htaccess allow override on
+		
+	IIS
+		see instructions below
 
 	3rd Party API Keys (recommended to get your own api keys)
 		tmdb (signup @ http://api.themoviedb.org/2.1/)
@@ -36,6 +39,7 @@ REQUIREMENTS
 	
 		
 INSTALLATION
+	
 	there is an installer in \install\ try it first by creating your website,
 	copying the application files there, and browsing to http://yournewznabserver/install.
 	
@@ -48,7 +52,17 @@ INSTALLATION
 	
 	if updating was successful then you can continue to setup your site and configure the update scripts for
 	auto-updating.
+
+IIS Instructions
+	Because nnplus was originally intended to be ran on XAMP/Apache, first import the .htaccess file in the main 
+	/www folder to IIS rewrite rules (start IIS -> site name -> URL Rewrite -> Import Rules -> Select .htaccess
+	under "Configuration File" and hit import, then apply. This ensures all db related URL strings will bring up
+	the appropriate site destinations.
 	
+	In addition, like all IIS sites, ensure the IIS AppPool\sitename has read/write access to the www/lib/smart/templates_c folder.
+	
+	Create a new folder in /www called nzbfiles and apply IIS AppPool\sitename read/write to it.
+	Create a new folder in /www/nzbfiles called tmpunrar and apply IIS AppPool\sitename read/write to it.
 	
 RUNNING OUTSIDE OF WEB ROOT
 	set /.htaccess RewriteBase to your virtual directory
