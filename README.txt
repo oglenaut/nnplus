@@ -1,4 +1,12 @@
 ABOUT
+	
+	This is a fork of anth0/nnplus which I guess I'll call nnplusplus.
+	The idea is to update anth0's old nnplus repository with some features included in nzedb
+	but still included regex based fetches/blacklists since they work pretty well.
+	Currently the focus will be update the files to be 5.4 compatible (rid PHP STRICT/WARNING)
+	
+	Next will be inclusion of some community made cleanup scripts for maitining the DB.
+	
 	Newznab is an nzbs.org clone PHP/Smarty application, which supports the indexing of 
 	usenet headers into a mysql database and provides a simple web based search interface 
 	onto the data.
