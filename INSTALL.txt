@@ -59,10 +59,12 @@ IIS Instructions
 	under "Configuration File" and hit import, then apply. This ensures all db related URL strings will bring up
 	the appropriate site destinations.
 	
-	In addition, like all IIS sites, ensure the IIS AppPool\sitename has read/write access to the www/lib/smart/templates_c folder.
+	In addition ensure the IIS AppPool\sitename has read/write access to the www/lib/smart/templates_c folder.
 	
 	Create a new folder in /www called nzbfiles and apply IIS AppPool\sitename read/write to it.
 	Create a new folder in /www/nzbfiles called tmpunrar and apply IIS AppPool\sitename read/write to it.
+	
+	now visit http://sitename/install to begin the installation process.
 	
 RUNNING OUTSIDE OF WEB ROOT
 	set /.htaccess RewriteBase to your virtual directory
