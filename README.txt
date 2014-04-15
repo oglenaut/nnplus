@@ -5,7 +5,10 @@ ABOUT
 	but still included regex based fetches/blacklists since they work pretty well.
 	Currently the focus will be update the files to be 5.4 compatible (rid PHP STRICT/WARNING)
 	
-	Next will be inclusion of some community made cleanup scripts for maitining the DB.
+	Next will be inclusion of some community made cleanup scripts for maintaining the DB.
+	
+	This will be a windows centric nnplus derivative since nzedb is *nix focused. This means update
+	scripts will be .bat/.com focused.
 	
 	Newznab is an nzbs.org clone PHP/Smarty application, which supports the indexing of 
 	usenet headers into a mysql database and provides a simple web based search interface 
