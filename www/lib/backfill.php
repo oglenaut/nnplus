@@ -47,6 +47,7 @@ class Backfill
 	function backfillGroup($nntp, $groupArr)
 	{
 		$db = new DB();
+		$pear = new PEAR;
 		$binaries = new Binaries();
 		$n = $this->n;
 		$this->startGroup = microtime(true);
@@ -54,7 +55,7 @@ class Backfill
 		echo 'Processing '.$groupArr['name'].$n;
 		
 		$data = $nntp->selectGroup($groupArr['name']);
-		if(PEAR::isError($data))
+		if($pear->isError($data))
 		{
 			echo "Could not select group (bad name?): {$groupArr['name']}$n";
 			return;
@@ -120,11 +121,12 @@ class Backfill
 	function postdate($nntp,$post,$debug=true) //returns single timestamp from a local article number
 	{
 		$n = $this->n;
+		$pear = new PEAR;
 		$attempts=0;
 		do
 		{
 			$msgs = $nntp->getOverview($post."-".$post,true,false);
-			if(PEAR::isError($msgs))
+			if($pear->isError($msgs))
 			{
 				echo "Error {$msgs->code}: {$msgs->message}$n";
 				echo "Returning from postdate$n";
@@ -153,11 +155,12 @@ class Backfill
 	function daytopost($nntp, $group, $days, $debug=true)
 	{
 		$n = $this->n;
+		$pear = new PEAR;
 		$pddebug = false; //DEBUG every postdate call?!?!
 		if ($debug) echo "INFO: daytopost finding post for $group $days days back.".$n;
 		
 		$data = $nntp->selectGroup($group);
-		if(PEAR::isError($data))
+		if($pear->isError($data))
 		{
 			echo "Error {$data->code}: {$data->message}$n";
 			echo "Returning from daytopost$n";
