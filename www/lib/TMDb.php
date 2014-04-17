@@ -13,7 +13,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 /**
  * TMDb PHP API class - API 'themoviedb.org'
- * API Documentation: http://api.themoviedb.org/2.1/
+ * API Documentation: https://api.themoviedb.org/3/
  * Documentation and usage in README file - http://github.com/glamorous/TMDb-PHP-API
  *
  * @author Jonas De Smet - Glamorous
@@ -36,7 +36,7 @@ class TMDb
 	const POST = 'post';
 	const GET = 'get';
 
-	const API_URL = 'http://api.themoviedb.org/2.1/';
+	const API_URL = 'https://api.themoviedb.org/3/';
 
 	const VERSION = '0.9.8';
 
