@@ -223,7 +223,8 @@ class TvRage
 							// next episode
 							if (isset($epInfo['next']) && $epInfo['next']['episode'] != '') 
 							{
-								if ($prev_ep == "" && $arr['nextinfo'] != '' && $epInfo['next']['day_time'] > $arr['nextDateU'] && $arr['nextDateDay'] < $yesterday) 
+								//if ($prev_ep == "" && $arr['nextinfo'] != '' && $epInfo['next']['day_time'] > $arr['nextDateU'] && $arr['nextDateDay'] < $yesterday) 
+								if ($prev_ep == "" && (isset($arr['nextinfo']) ? $arr['nextinfo'] : null) && $epInfo['next']['day_time'] > $arr['nextDateU'] && $arr['nextDateDay'] < $yesterday) 
 								{
 									$db->query(sprintf("update tvrage set prevdate = nextdate, previnfo = nextinfo where ID = %d", $arr['ID']));
 									$prev_ep = "SWAPPED with: ".$arr['nextInfo']." - ".date("r", $arr['nextDateU']);
