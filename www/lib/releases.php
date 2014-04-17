@@ -1236,9 +1236,6 @@ class Releases
 						$db->query(sprintf("update binaries set relname = replace(%s, '_', ' '), relpart = %d, reltotalpart = %d, procstat=%d, categoryID=%s, regexID=%d, reqID=%s where ID = %d", 
 							$db->escapeString($matches['name']), $relparts[0], $relparts[1], Releases::PROCSTAT_TITLEMATCHED, $regcatid, $regexrow["ID"], $reqid, $rowbin["ID"] ));
 					}
-					else {
-					return null;
-					}
 				}
 			}
 			
